@@ -11,14 +11,6 @@ jobs:
     env:
       GITHUB_TEST_ORGANIZATION: 'kfcampbell-terraform-provider'
     steps:
-      - name: Debug
-        run: |
-          echo "Hello" >> /tmp/file.txt
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" >> /tmp/file.txt
-          sudo apt install -y tmate
-          sudo tmate -F
-        env:
-          GPG: ${{ secrets.GPG_PRIVATE_KEY }}
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a # v5.2.0
         with:
